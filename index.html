@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="icon" href="img/frames/warofcreatures.png" sizes="16x16">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/1000pxMax.css">
+</head>
+
+<body>
+    <div class="game" id="game">
+        <div id="gameCont" class="NoDisplay">
+            <div class="header">
+                <h1>Chose your destiny:</h1>
+            </div>
+            <div class="cAvatars">
+                <div class="avatarContainer" id="KnightId" onclick="KnightSlected()">
+                    <h2>Knight class
+                        <img src="img/classesIco/earth.gif" alt="" />
+                    </h2>
+                    <img class="avatar" src="img/avatar/knight.png" alt="" />
+                    <p>
+                        <img src="img/classesIco/icon-circle-green.png" alt="" /> Health: High</p>
+                    <p>
+                        <img src="img/classesIco/attack.gif" alt="" /> Damage: Low</p>
+                    <p>
+                        <img src="img/classesIco/ankh.png" alt="" /> Skill: Hand life</p>
+                </div>
+                <div class="avatarContainer" id="DemonId" onclick="DemonSlected()">
+                    <h2>Demon class
+                        <img src="img/classesIco/fire.gif" alt="" />
+                    </h2>
+                    <img class="avatar" src="img/avatar/Demon.png" alt="" />
+                    <p>
+                        <img src="img/classesIco/icon-circle-red.png" alt="" /> Health: Low</p>
+                    <p>
+                        <img src="img/classesIco/axe.png" alt="" /> Damage: High</p>
+                    <p>
+                        <img src="img/classesIco/fighttype_pve.gif" alt="" /> Skill: Death Curse</p>
+                </div>
+                <div class="avatarContainer" id="AssasinId" onclick="AssasinSelected()">
+                    <h2>Assasin class
+                        <img src="img/classesIco/shadow.gif" alt="" />
+                    </h2>
+                    <img class="avatar" src="img/avatar/assasin.png" alt="" />
+                    <p>
+                        <img src="img/classesIco/icon-circle-red.png" alt="" /> Health: Low</p>
+                    <p>
+                        <img src="img/classesIco/battlefield.png" alt="" /> Damage: High</p>
+                    <p>
+                        <img src="img/classesIco/ff_injury.gif" alt="" /> Skill: Backslap</p>
+                </div>
+            </div>
+        </div>
+        <div class="center" id="center">
+            <div id="loadContainer" class="NoDisplay">
+                <p>Load your last save</p>
+                <input onclick="GetToGameFromLoad()" class="btn" type="button" value="Load" name="" id="LoadBtn" />
+            </div>
+            <div>
+                <p>Start new game</p>
+                <input onclick="pressStartNewBtn()" class="btn" type="button" value="Start new game" name="" id="Start" />
+                <p>Attention if you start a new game you will erase everything</p>
+            </div>
+        </div>
+        <div id="RegisterName" class="NoDisplay">
+            <h1 class="header">Complete field to continue</h1>
+            <input onkeyup="completeName()" class="inpName" maxlength="17" placeholder="Write your hero name" type="text" name="" id="HeroName"
+            />
+            <p class="NoDisplay pElementBad" id="pElementBad">Your hero name must begin with a upper letter "A".
+                <br /> You can't have spaces in your hero name.
+            </p>
+            <p class="NoDisplay pElementGood" id="pElementGood">Wonderfull name hero.</p>
+            <div class="regAllClassShow">
+                <div class="regClassShow">
+                    <img class="classSelected" src="img/avatar/assasin.png" id="AssasinRegImg" alt="" />
+                    <img class="classSelected" src="img/avatar/knight.png" id="KnightRegImg" alt="" />
+                    <img class="classSelected" src="img/avatar/Demon.png" id="DemonRegImg" alt="" />
+                </div>
+                <div>
+                    <div id="AssasinStats" class="NoDisplay">
+                        <h3>
+                            Assasin class
+                            <img src="img/classesIco/shadow.gif" alt="" />
+                        </h3>
+                        <br />
+                        <p>
+                            <img src="img/classesIco/icon-circle-red.png" alt="" /> Health: Low</p>
+                        <p>
+                            <img src="img/classesIco/battlefield.png" alt="" /> Damage: High</p>
+                        <p>
+                            <img src="img/classesIco/ff_injury.gif" alt="" /> Skill: Backslap</p>
+
+                        <p>
+                            <img title="Asasin class" src="img/classesIco/shadow.gif" alt="" />
+                            <img title="win against" src="img/classesIco/news-arrow.gif" alt="" />
+                            <img title="Demon class" src="img/classesIco/fire.gif" alt="">
+                        </p>
+                        <p>
+                            <img title="Asasin class" src="img/classesIco/shadow.gif" alt="" />
+                            <img title="lose against" src="img/classesIco/news-arrow.gif" class="arrowReverse" alt="" />
+                            <img title="Knight class" src="img/classesIco/earth.gif" alt="">
+                        </p>
+                    </div>
+                    <div id="KnightStats" class="NoDisplay">
+                        <h3>
+                            Knight class
+                            <img src="img/classesIco/earth.gif" alt="" />
+                        </h3>
+                        <br />
+                        <p>
+                            <img src="img/classesIco/icon-circle-green.png" alt="" /> Health: High</p>
+                        <p>
+                            <img src="img/classesIco/attack.gif" alt="" /> Damage: Low</p>
+                        <p>
+                            <img src="img/classesIco/ankh.png" alt="" /> Skill: Hand Life</p>
+
+                        <p>
+                            <img title="Knight class" src="img/classesIco/earth.gif" alt="" />
+                            <img title="win against" src="img/classesIco/news-arrow.gif" alt="" />
+                            <img title="Asasin class" src="img/classesIco/shadow.gif" alt="">
+                        </p>
+                        <p>
+                            <img title="Knight class" src="img/classesIco/earth.gif" alt="" />
+                            <img title="lose against" src="img/classesIco/news-arrow.gif" class="arrowReverse" alt="" />
+                            <img title="Demon class" src="img/classesIco/fire.gif" alt="" />
+                        </p>
+                    </div>
+
+                    <div id="DemonStats" class="NoDisplay">
+                        <h3>
+                            Demon class
+                            <img src="img/classesIco/fire.gif" alt="" />
+                        </h3>
+                        <br />
+                        <p>
+                            <img src="img/classesIco/icon-circle-red.png" alt="" /> Health: low</p>
+                        <p>
+                            <img src="img/classesIco/axe.png" alt="" /> Damage: High</p>
+                        <p>
+                            <img src="img/classesIco/fighttype_pve.gif" alt="" /> Skill: Death Curse</p>
+
+                        <p>
+                            <img title="Demon class" src="img/classesIco/fire.gif" alt="" />
+                            <img title="win against" src="img/classesIco/news-arrow.gif" alt="" />
+                            <img title="Knight class" src="img/classesIco/earth.gif" alt="">
+                        </p>
+                        <p>
+                            <img title="Demon class" src="img/classesIco/fire.gif" alt="" />
+                            <img title="lose against" src="img/classesIco/news-arrow.gif" class="arrowReverse" alt="" />
+                            <img title="Asasin class" src="img/classesIco/shadow.gif" alt="" />
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="LowStats" id="LowKnightStats">
+                <p> &nbsp
+                    <img title="Knight class" src="img/classesIco/earth.gif" alt="" /> Knights get in fights always with a sword and a shield.</p>
+                <p>Knights fights takes long time but much safer then anothers.</p>
+                <p>They can block oponents hits.</p>
+            </div>
+            <div class="LowStats" id="LowDemonStats">
+                <p>&nbsp
+                    <img title="Knight class" src="img/classesIco/fire.gif" alt="" /> Demons always get in fights with axes.</p>
+                <p>Demons fights takes short time but they are risky.</p>
+                <p>They can do doble damage.</p>
+            </div>
+            <div class="LowStats" id="LowAssasinStats">
+                <p>&nbsp
+                    <img title="Knight class" src="img/classesIco/shadow.gif" alt="" /> Assasins get in fights always with two swords.</p>
+                <p>Assasins fights takes normal time and not very risy.</p>
+                <p>They can dodge oponents hits.</p>
+            </div>
+            <div class="BtnContainer">
+                <input onclick="getToGameScreen()" class="btn NoDisplay" type="button" value="Start" name="" id="StartBtn" />
+                <input class="btn" type="button" value="Get Back" name="" id="BackBtn" onclick="getBack()" />
+            </div>
+        </div>
+        <div class="GameScreen" id="gameScreen">
+            <div class="BgUp">
+                <div class="AvatarShowGameScreen">
+                    <img id="ScreenDemonAvatar" class="gameScAvatar" src="img/avatar/Demon.png" alt="" />
+                    <img id="ScreenKnightAvatar" class="gameScAvatar" src="img/avatar/knight.png" alt="" />
+                    <img id="ScreenAssasinAvatar" class="gameScAvatar" src="img/avatar/assasin.png" alt="" />
+                </div>
+                <div>
+                    <div class="contStats">
+                        <div class="nameOnGameScreen">
+                            <img class="FullWidthOfContainer" src="css/img/name.png" alt="" />
+                            <span class="spanNameOnGS" id="spanNameOnGS">SLOW</span>
+                        </div>
+                    </div>
+                    <div class="contStats">
+                        <div class="HpOnGameScreen">
+                            <img class="FullWidthOfContainer" src="css/img/hp.png" alt="" />
+                            <span class="spanHealthOnGS" id="spanHealthOnGS">100 Hp</span>
+                        </div>
+                    </div>
+                    <div class="contStats">
+                        <div class="MoneyOnGameScreen">
+                            <img class="FullWidthOfContainer" src="css/img/moneyBar.png" alt="" />
+                            <div class="posAbs">
+                                <img src="img/money/diamond.png" alt="">
+                                <span class="" id="DiamondsOnGS">0</span>
+                                <img src="img/money/m_gld.gif" alt="">
+                                <span class="" id="GoldOnGs"> 0</span>
+                                <img src="img/money/m_slv.gif" alt="">
+                                <span class="" id="SilverOnGs"> 0</span>
+                                <img src="img/money/m_game.gif" alt="">
+                                <span class="" id="CopperOnGs"> 0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Top menu-->
+                <div class="Flex">
+                    <div class="GameMenuContainer">
+                        <img class="GameMenuImg" src="img/frames/backpack.png" alt="">
+                    </div>
+                    <div class="GameMenuContainer">
+                        <img class="GameMenuImg" src="img/frames/location.png" alt="">
+                    </div>
+                    <div class="GameMenuContainer">
+                        <img class="GameMenuImg" src="img/frames/hunt.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- Locations Images And npc-->
+            <div class="location">
+                <img id="imgSettlement" class="imgLoc" src="img/location/settlement of chernang.png" />
+                <!--Npc-->
+                <img id="npcChiefImg" class="imgLoc NoDisplay" src="img/npc/Chief.png" />
+                <img id="imgSmoky" class="NoDisplay imgLoc" src="img/location/smoky knools.png" />
+                <img id="imgClanBurial" class="NoDisplay imgLoc" src="img/location/clan brutain.png" />
+                <img id="imgFort" class="NoDisplay imgLoc" src="img/location/forth dibrach.png" />
+                <img id="imgGeorge" class="NoDisplay imgLoc" src="img/location/george of ghondi.png" />
+                <img id="imgSqura" class="NoDisplay imgLoc" src="img/location/squra of fire.png" />
+                <img id="imgPlace" class="NoDisplay imgLoc" src="img/location/place of sorr.png" />
+                <img id="imgCity" class="NoDisplay imgLoc" src="img/location/dartong city.png" />
+
+            </div>
+            <!-- Pots slot 1-2 -->
+            <div class="containerDownBar">
+                <div class="ContainerSlots">
+                    <div class="slots">
+                        <img class="ImgPots" src="img/pots/life/life1-gray.gif" alt="" id="LifeGraySlotOne" />
+                        <img class="ImgPots" src="img/pots/life/life2-green.gif" alt="" id="LifeGreenSlotOne" />
+                        <img class="ImgPots" src="img/pots/life/life2-blue.gif" alt="" id="LifeBlueSlotOne" />
+                        <img class="ImgPots" src="img/pots/life/life3-purple.gif" alt="" id="LifePurpleSlotOne" />
+                    </div>
+                    <div class="slots">
+                        <img class="ImgPots" src="img/pots/life/life1-gray.gif" alt="" id="LifeGraySlotTwo" />
+                        <img class="ImgPots" src="img/pots/life/life2-green.gif" alt="" id="LifeGreenSlotTwo" />
+                        <img class="ImgPots" src="img/pots/life/life2-blue.gif" alt="" id="LifeBlueSlotTwo" />
+                        <img class="ImgPots" src="img/pots/life/life3-purple.gif" alt="" id="LifePurpleSlotTwo" />
+                    </div>
+                </div>
+                <!-- Location Events (text - buttons)-->
+                <div class="locationStats">
+                    <div class="locationImgAndSpan">
+                        <span id="titleLoc" class="spanLoc">Settlement of chernang</span>
+                        <div class="contOfLocations">
+                            <p onclick="changeLocation(0)" id="locSmokyKnools" class="spanLocTo">
+                                <img src="img/frames/arrowLoc.png" alt="" /> Smoky Knools</p>
+                            <p id="locUnderInstance" class="spanLocTo">
+                                <img src="img/frames/arrowLoc.png" alt="" /> Underground Instance</p>
+                            <p id="locShop" class="spanLocTo">
+                                <img src="img/frames/arrowEnter.png" alt="" /> Shop</p>
+                            <p id="npcChief" onmouseover="onMouseOver()" onmouseout="onMouseOut()" class="spanLocTo npcChief">
+                                <img src="img/frames/arrowLoc.png" alt="" /> Chief Tornog</p>
+                            <p onclick="changeLocation(1)" id="locSettlementChernang" class="NoDisplay spanLocTo">
+                                <img src="img/frames/arrowLoc.png" alt="" /> Settlement of chernang</p>
+                            <p onclick="changeLocation(2)" id="locClanBurial" class="NoDisplay spanLocTo">
+                                <img src="img/frames/arrowLoc.png" alt="" /> Clan Burial</p>
+                            <p onclick="changeLocation(3)" id="locFortDybrach" class="NoDisplay spanLocTo">
+                                <img src="img/frames/arrowLoc.png" alt="" /> Fort Dybrach</p>
+                            <p onclick="changeLocation(4)" id="locGeorge" class="NoDisplay spanLocTo">
+                                <img src="img/frames/arrowLoc.png" alt="" /> George of Chernag</p>
+                            <p onclick="changeLocation(5)" id="locSqura" class="NoDisplay spanLocTo">
+                                <img src="img/frames/arrowLoc.png" alt="" /> Squire of Fire</p>
+                            <p onclick="changeLocation(6)" id="locPlaceOfSorrow" class="NoDisplay spanLocTo">
+                                <img src="img/frames/arrowLoc.png" alt="" /> Place of Sorrow</p>
+                            <p onclick="changeLocation(7)" id="locDartong" class="NoDisplay spanLocTo">
+                                <img src="img/frames/arrowLoc.png" alt="" /> Dartong City</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pots slot 3-4 -->
+                <div class="ContainerSlots">
+                    <div class="slots">
+                        <img class="ImgPots" src="img/pots/life/life1-gray.gif" alt="" id="LifeGraySlotOne" />
+                        <img class="ImgPots" src="img/pots/life/life2-green.gif" alt="" id="LifeGreenSlotOne" />
+                        <img class="ImgPots" src="img/pots/life/life2-blue.gif" alt="" id="LifeBlueSlotOne" />
+                        <img class="ImgPots" src="img/pots/life/life3-purple.gif" alt="" id="LifePurpleSlotOne" />
+                    </div>
+                    <div class="slots">
+                        <img class="ImgPots" src="img/pots/life/life1-gray.gif" alt="" id="LifeGraySlotTwo" />
+                        <img class="ImgPots" src="img/pots/life/life2-green.gif" alt="" id="LifeGreenSlotTwo" />
+                        <img class="ImgPots" src="img/pots/life/life2-blue.gif" alt="" id="LifeBlueSlotTwo" />
+                        <img class="ImgPots" src="img/pots/life/life3-purple.gif" alt="" id="LifePurpleSlotTwo" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/registerName.js"></script>
+        <script src="js/GameScreen.js"></script>
+        <script src="js/load.js"></script>
+        <script src="js/StartNew.js"></script>
+        <script src="js/location.js"></script>
+        <script src="js/npc.js"></script>
+</body>
+
+</html>

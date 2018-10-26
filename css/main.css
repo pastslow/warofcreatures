@@ -1,0 +1,286 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-image: url(img/body.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.game{
+    max-width: 660px;
+    height: 500px;
+    border: 20px solid;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border-image: url(img/border.png) 30 round;
+    background-image: url(img/bg.png);
+    overflow: hidden;
+}
+.cAvatars{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+.avatar{
+    max-width: 100%;
+    border: 5px solid;
+    border-image: url(img/frame2.png) 10 round;
+}
+.avatarContainer{
+    opacity: 0.5;
+    width: 25%;
+    margin: 8px;
+}
+.avatarContainer:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.header{
+    text-align: center;
+    margin: 0px;
+}
+#RegisterName{
+    background-image: url(img/daily-bonus-humans.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.inpName{
+    text-align: center;
+    padding: 6px;
+    font-size: 20px;
+    color: black;
+    background-image: url(img/bg_g.gif);
+    background-size: contain;
+    background-position: center;
+    width: 38%;
+    margin-top: 30px;
+}
+.btn{
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 5px;
+    width: 80px;
+    margin: 10px;
+    background-image: url(img/btn1.png);
+    background-size: cover;
+    background-position: center;
+}
+.regClassShow{
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    margin: 4px;
+}
+.classSelected{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.regAllClassShow{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.arrowReverse{
+    transform: scaleX(-1);
+}
+.NoDisplay {
+    display: none;
+}
+.LowStats{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+}
+.BtnContainer{
+    display: flex;
+    justify-content: center;
+}
+.pElementBad{
+    color: red;
+}
+.pElementGood{
+    color: green;
+}
+.BgUp{
+    width: 100%;
+    height: 59px;
+    background-image: url(img/bgUp.png);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.AvatarShowGameScreen{
+    width: 60px;
+    height: 59px;
+    background-size: cover;
+    background-image: url(img/frame.png);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+.gameScAvatar{
+    width: 50px;
+    border: 1px solid;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 4px;
+    transition: 10s;
+    animation: rotate3D 10s infinite;
+    display: none;
+}
+
+@keyframes rotate3D {
+    from{
+        transform: rotate3d(0, 0, 0, 0deg);
+
+    }
+    to {transform: rotate3d(0, 1, 0, 360deg);}
+}
+.GameMenuImg{
+    width: 55px;
+    height: 55px;
+    opacity: 0.7;
+}
+.GameMenuContainer{
+    width: 55px;
+    height: 55px;
+}
+.GameMenuImg:hover{
+    opacity: 1;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+}
+.Flex{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nameOnGameScreen{
+    justify-content: center;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 110px;
+    font-size: small;
+}
+.HpOnGameScreen{
+    justify-content: center;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 120px;
+    height: 20px;
+    margin-top: 2px;
+}
+.spanNameOnGS{
+    position: absolute;
+    color: white;
+}
+.spanHealthOnGS{
+    position: absolute;
+    color: #26ff2d;
+}
+.FullWidthOfContainer{
+    width: 100%;
+}
+.posAbs{
+    position: absolute;
+}
+.MoneyOnGameScreen{
+    justify-content: center;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 160px;
+    height: 20px;
+    margin-top: 2px;
+}
+.GameScreen{
+    display: none;
+}
+.ContainerSlots{
+    width: 55px;
+}
+.slots{
+    width: 100%;
+    background-image: url(img/slot.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 55px;
+    text-align: center;
+    overflow: hidden;
+}
+.ImgPots{
+    width: 80%;
+    border-radius: 50%;
+    height: 83%;
+    margin-top: 4px;
+    margin-left: 4px;
+}
+.location{
+    overflow: auto;
+    height: 290px;
+}
+.imgLoc{
+    height: 265px;
+    width: 880px;
+}
+.locationStats{
+    width: 80%;
+}
+.containerDownBar{
+    display: flex;
+    justify-content: center;
+}
+.locationImgAndSpan{
+    background-image: url(img/table.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    text-align: center;
+
+}
+.spanLoc{
+    color: white;
+}
+.spanLocTo{
+    color: black;
+}
+.spanLocTo:hover{
+    font-size: 20px;
+    cursor: pointer;
+    background: darkkhaki;
+}
+.contOfLocations{
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    height: 80px;
+    overflow: auto;
+    margin-top: 10px;
+}
+.center{
+    text-align: center;
+    margin-top: 150px;
+}
+
+
+.npcChief{
+    color: #00ad00;
+}
